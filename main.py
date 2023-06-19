@@ -59,8 +59,10 @@ if uploaded_file is not None:
 
 
     if st.button('GET DISTANCES'):
-        input_df['Driving Distance'] = input_df.apply(
-        lambda row: get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units), axis=1)
+        # input_df['Driving Distance'] = input_df.apply(
+        # lambda row: get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units), axis=1)
+        for index, row in input_df.iterrows():
+            input_df.at[index, 'Driving Distance'] = get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units)
         st.write("Driving distance : "), input_df
 
         csv = convert_df(input_df)
