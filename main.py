@@ -17,6 +17,9 @@ google_api_key = "AIzaSyCn_mtafoVGuSVjcYhj_2_lUVX57F9xDso"
 
 st.header("GET DRIVING DISTANCES")
 st.write("Upload file with geocodes to get the driving distance between them - ")
+orig_loc_col = st.text_input("Origin Column")
+dest_loc_col = st.text_input("Destination Column")
+# st.write("Note: Name your origin location as Origin and destination as Destination")
 uploaded_file = st.file_uploader("Choose a file", type='csv')
 
 
