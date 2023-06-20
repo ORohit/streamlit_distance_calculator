@@ -15,12 +15,12 @@ dest_loc_col = 'Destination'
 units = 'imperial'
 google_api_key = "AIzaSyCn_mtafoVGuSVjcYhj_2_lUVX57F9xDso"
 
-st.header("GET DRIVING DISTANCES")
-st.write("Upload file with below columns to get the driving distance between them - ")
-orig_loc_col = st.text_input("Origin Column")
-dest_loc_col = st.text_input("Destination Column")
-# st.write("Note: Name your origin location as Origin and destination as Destination")
-uploaded_file = st.file_uploader("Choose a file", type='csv')
+# st. set_page_config(layout="wide")
+st.header("GET DRIVING DISTANCES :car:")
+st.write("Upload your <b> file with origin & destination pairs</b> to get driving distance between them - ", unsafe_allow_html=True)
+# orig_loc_col = st.text_input("Origin Column")
+# dest_loc_col = st.text_input("Destination Column")
+uploaded_file = st.file_uploader("Upload file -", type='csv')
 
 
 def get_driving_distance(orig_loc, dest_loc, units='imperial'):
@@ -50,20 +50,31 @@ def get_driving_distance(orig_loc, dest_loc, units='imperial'):
     logger.info("{0} | {1} | {2} | {3}".format(status, orig_loc, dest_loc, str(driving_distance)+' '+driving_distance_uom))
     return driving_distance
 
+
 def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
+
 if uploaded_file is not None:
     input_df = pd.read_csv(uploaded_file, encoding='latin-1')
-    st.write("Uploaded data : "), input_df
+    input_df_columns = input_df.columns
+    # st.write("Uploaded data (top 5 rows): "), input_df.head(5)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        orig_loc_col = st.selectbox("Origin Column", input_df_columns)
+    with col2:
+        dest_loc_col = st.selectbox("Destination Column", input_df_columns)
 
 
     if st.button('GET DISTANCES'):
         # input_df['Driving Distance'] = input_df.apply(
         # lambda row: get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units), axis=1)
+
         for index, row in input_df.iterrows():
             input_df.at[index, 'Driving Distance'] = get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units)
-        st.write("Driving distance : "), input_df
+        "Driving distance : ", input_df
 
         csv = convert_df(input_df)
         st.download_button('DOWNLOAD RESULTS', csv, 'output_drivingdistances.csv', 'text/csv', key='download-csv')
