@@ -56,7 +56,7 @@ def convert_df(df):
 
 with st.sidebar:
     st.markdown(
-            "## About \n"
+            "# ABOUT \n"
             "💡 Demonstrates a use case for building *Self-Serve* applications using *Streamlit*\n"
         )
     st.markdown(
