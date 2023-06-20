@@ -13,7 +13,7 @@ orig_loc_col = 'Origin'                             # column containing origin l
 dest_loc_col = 'Destination'
 
 units = 'imperial'
-google_api_key = "AIzaSyCn_mtafoVGuSVjcYhj_2_lUVX57F9xDso"
+# google_api_key = "**hardcoded API key"
 
 # st. set_page_config(layout="wide")
 st.title("Driving Distance Calculator :car:")
@@ -55,16 +55,31 @@ def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
 with st.sidebar:
+
     st.markdown(
-            "# ABOUT \n"
-            "💡 Demonstrates a use case for building *Self-Serve* applications using *Streamlit*\n"
-        )
-    st.markdown(
-        ":satellite: Fetches driving distances using GOOGLE API. \n"
+        "# HOW TO USE\n"
+        "1. Enter your [Google API key](https://developers.google.com/maps/documentation/distance-matrix/overview) below🔑\n"  # noqa: E501
+        "2. Upload your file📄\n"
+        "3. Review results and download if needed💬\n"
     )
-    st.markdown(
-        ":computer: Git link: [Sample Self-Serve](https://github.com/ORohit/stremlit_test) \n"
+    api_key_input = st.text_input(
+        "Google API Key",
+        type="password",
+        placeholder="Paste your Google API key here ",
+        help="You can get your API key from https://developers.google.com/maps/documentation/distance-matrix/overview.",  # noqa: E501
+        value=st.session_state.get("OPENAI_API_KEY", ""),
     )
+    if api_key_input:
+        google_api_key = api_key_input
+
+    st.markdown("---")
+    st.markdown(
+        "# ABOUT\n"
+        "* Demonstrates a use case for building *Self-Serve* applications using *Streamlit* :bulb:\n"  # noqa: E501
+        "* Fetches driving distances using GOOGLE API :satellite: . \n"
+        "*  Git link: [DistanceApp](https://github.com/ORohit/stremlit_test) :computer: 💬\n"
+    )
+
     st.markdown("---")
     st.markdown(
         """
