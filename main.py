@@ -60,7 +60,8 @@ with st.sidebar:
         "# HOW TO USE\n"
         "1. Enter your [Google API key](https://developers.google.com/maps/documentation/distance-matrix/overview) below🔑\n"  # noqa: E501
         "2. Upload your file📄\n"
-        "3. Review results and download if needed💬\n"
+        "3. Specify *Origin & Destination* columns 💬\n"
+        "4. Review results and download if needed :100:\n"
     )
     api_key_input = st.text_input(
         "Google API Key",
@@ -75,9 +76,9 @@ with st.sidebar:
     st.markdown("---")
     st.markdown(
         "# ABOUT\n"
-        "* Demonstrates a use case for building *Self-Serve* applications using *Streamlit* :bulb:\n"  # noqa: E501
-        "* Fetches driving distances using GOOGLE API :satellite: . \n"
-        "*  Git link: [DistanceApp](https://github.com/ORohit/stremlit_test) :computer: 💬\n"
+        "* Demonstrates a use case for building *Self-Serve* applications using *Streamlit*.\n"  # noqa: E501
+        "* Fetches driving distances using Google API. \n"
+        "*  Git link: [DistanceApp](https://github.com/ORohit/stremlit_test)\n"
     )
 
     st.markdown("---")
