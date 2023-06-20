@@ -16,7 +16,7 @@ units = 'imperial'
 google_api_key = "AIzaSyCn_mtafoVGuSVjcYhj_2_lUVX57F9xDso"
 
 # st. set_page_config(layout="wide")
-st.header("GET DRIVING DISTANCES :car:")
+st.title("Driving Distance Calculator :car:")
 st.write("Upload your <b> CSV file with origin & destination pairs</b> to get driving distance between them. </br>Sample file <a href=""https://shorturl.at/jSXY7"">download here</a> ", unsafe_allow_html=True)
 # orig_loc_col = st.text_input("Origin Column")
 # dest_loc_col = st.text_input("Destination Column")
@@ -54,6 +54,29 @@ def get_driving_distance(orig_loc, dest_loc, units='imperial'):
 def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
+with st.sidebar:
+    st.markdown(
+            "## About \n"
+            "💡 Demonstrates a use case for building *Self-Serve* applications using *Streamlit*\n"
+        )
+    st.markdown(
+        ":satellite: Fetches driving distances using GOOGLE API. \n"
+    )
+    st.markdown(
+        ":computer: Git link: [Sample Self-Serve](https://github.com/ORohit/stremlit_test) \n"
+    )
+    st.markdown("---")
+    st.markdown(
+        """
+        # FAQ
+        ## How does this application work?
+        When you upload the file and hit *Calculate Distance*,
+        the code will fetch driving distances row by row by making API calls to Google.
+        ## Do I need to have API key to use this application?
+        Yes, an API key is needed by the application to talk to Google servers. 
+        Since this is just a demo, I have embeded my personal API key within the code so that you need not get one.
+        ## How long it takes to get the distances?
+        It usually takes less than minute to fetch distances for about 100 records. """)
 
 if uploaded_file is not None:
     input_df = pd.read_csv(uploaded_file, encoding='latin-1')
