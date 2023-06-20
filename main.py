@@ -107,7 +107,7 @@ if uploaded_file is not None:
         dest_loc_col = st.selectbox("Destination Column", input_df_columns)
 
 
-    if st.button('GET DISTANCES'):
+    if st.button('GET DISTANCES (click once & wait'):
         # input_df['Driving Distance'] = input_df.apply(
         # lambda row: get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units), axis=1)
 
