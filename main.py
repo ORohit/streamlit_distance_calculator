@@ -17,7 +17,7 @@ google_api_key = "AIzaSyCn_mtafoVGuSVjcYhj_2_lUVX57F9xDso"
 
 # st. set_page_config(layout="wide")
 st.header("GET DRIVING DISTANCES :car:")
-st.write("Upload your <b> file with origin & destination pairs</b> to get driving distance between them - ", unsafe_allow_html=True)
+st.write("Upload your <b> CSV file with origin & destination pairs</b> to get driving distance between them. </br>Sample file <a href=""https://shorturl.at/acdA4"">download here</a> ", unsafe_allow_html=True)
 # orig_loc_col = st.text_input("Origin Column")
 # dest_loc_col = st.text_input("Destination Column")
 uploaded_file = st.file_uploader("Upload file -", type='csv')
