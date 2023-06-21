@@ -1,6 +1,6 @@
 import streamlit as st
 
-google_api_singup = "https://developers.google.com/maps/documentation/javascript"
+google_api_singup = "https://developers.google.com/maps/documentation/distance-matrix/"
 
 def set_openai_api_key(api_key: str):
     st.session_state["google_api_key"] = api_key
