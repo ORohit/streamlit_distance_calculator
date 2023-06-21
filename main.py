@@ -19,7 +19,7 @@ dest_loc_col = 'Destination'
 # google_api_key = "**hardcoded API key"
 
 # st. set_page_config(layout="wide")
-st.title("Driving Distance Calculator :car:")
+st.title("Driving Distance Calculator XX :car:")
 st.write("Upload your <b> CSV file with origin & destination pairs</b> to get driving distance between them. </br>Sample file <a href=""https://shorturl.at/jSXY7"">download here</a> ", unsafe_allow_html=True)
 # orig_loc_col = st.text_input("Origin Column")
 # dest_loc_col = st.text_input("Destination Column")
