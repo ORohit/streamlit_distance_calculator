@@ -38,5 +38,4 @@ To run the Distance Calculator locally, follow these steps:
 ## Contributing
 If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
----
-Enjoy using the Distance Calculator! If you have any questions or feedback, please don't hesitate to get in touch.
+
