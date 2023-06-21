@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import requests
-import json
 import logging
 
 from component_sidebar import sidebar
@@ -12,17 +10,10 @@ logging.getLogger("urllib3").setLevel(logging.WARNING)
 logging.basicConfig(format=' %(asctime)s  %(name)-12s %(levelname)s : %(message)s', level=logging.DEBUG)
 logger = logging.getLogger(__name__ + " : ")
 
-orig_loc_col = 'Origin'                             # column containing origin location details (address/zip/geocodes)
-dest_loc_col = 'Destination'
-
-# units = 'imperial'
-# google_api_key = "**hardcoded API key"
 
 # st. set_page_config(layout="wide")
-st.title("Driving Distance Calculator :car:")
+st.title("Driving Distance Calculator  XX:car:")
 st.write("Upload your <b> CSV file with origin & destination pairs</b> to get driving distance between them. </br>Sample file <a href=""https://shorturl.at/jSXY7"">download here</a> ", unsafe_allow_html=True)
-# orig_loc_col = st.text_input("Origin Column")
-# dest_loc_col = st.text_input("Destination Column")
 uploaded_file = st.file_uploader("Upload file -", type='csv')
 
 sidebar()
