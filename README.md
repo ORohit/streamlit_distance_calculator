@@ -24,3 +24,19 @@ To run the Distance Calculator locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/distance-calculator.git
    cd distance-calculator
+   
+2. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+
+3. Run the Streamlit server:
+
+   ```bash
+   streamlit run main.py
+
+## Contributing
+If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+
+---
+Enjoy using the Distance Calculator! If you have any questions or feedback, please don't hesitate to get in touch.
