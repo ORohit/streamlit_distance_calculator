@@ -1,6 +1,6 @@
 # Distance Calculator
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://distance-calculator.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://distance-app.streamlit.app/)
 
 Distance Calculator is a simple web application built with Streamlit that allows users to calculate the distance between two locations. Whether you're planning a road trip or want to know the distance between two cities, this tool provides a convenient way to get accurate distance measurements.
 
@@ -13,7 +13,7 @@ Distance Calculator is a simple web application built with Streamlit that allows
 
 ## Demo
 
-Check out the live demo of the Distance Calculator: [https://distance-calculator.streamlit.app/](https://distance-calculator.streamlit.app/)
+Check out the live demo of the Distance Calculator: [https://distance-calculator.streamlit.app/](https://distance-app.streamlit.app/)
 
 ## Installation
 
