@@ -1,6 +1,7 @@
 import requests
 import json
 import logging
+import streamlit as st
 
 # configuring the logger
 logging.getLogger("urllib3").setLevel(logging.WARNING)
@@ -35,5 +36,14 @@ def get_driving_distance(orig_loc, dest_loc, google_api_key, units='imperial'):
     logger.info("{0} | {1} | {2} | {3}".format(status, orig_loc, dest_loc, str(driving_distance)+' '+driving_distance_uom))
     return driving_distance
 
+
 def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
+
+
+def api_input_check():
+    if not st.session_state.get("google_api_key"):
+        st.error(
+            "Enter your API key in the sidebar!"
+        )
+        st.stop

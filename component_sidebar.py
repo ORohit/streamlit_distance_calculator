@@ -28,7 +28,7 @@ def sidebar():
             "# ABOUT\n"
             "* Demonstrates a use case for building *Self-Serve* applications using *Streamlit*.\n"  # noqa: E501
             # "* Fetches driving distances using Google API. \n"
-            "*  Git link: [DistanceApp](https://github.com/ORohit/stremlit_test)\n"
+            "*  Git link: [DistanceCalculator](https://github.com/ORohit/stremlit_test)\n"
         )
 
         st.markdown("---")

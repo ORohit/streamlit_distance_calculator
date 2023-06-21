@@ -5,7 +5,7 @@ import json
 import logging
 
 from component_sidebar import sidebar
-from component_functions import get_driving_distance, convert_df
+from component_functions import get_driving_distance, convert_df, api_input_check
 
 # configuring the logger
 logging.getLogger("urllib3").setLevel(logging.WARNING)
@@ -19,7 +19,7 @@ dest_loc_col = 'Destination'
 # google_api_key = "**hardcoded API key"
 
 # st. set_page_config(layout="wide")
-st.title("Driving Distance Calculator XX :car:")
+st.title("Driving Distance Calculator :car:")
 st.write("Upload your <b> CSV file with origin & destination pairs</b> to get driving distance between them. </br>Sample file <a href=""https://shorturl.at/jSXY7"">download here</a> ", unsafe_allow_html=True)
 # orig_loc_col = st.text_input("Origin Column")
 # dest_loc_col = st.text_input("Destination Column")
@@ -43,8 +43,8 @@ if uploaded_file is not None:
         units = st.radio("Select Units", ["imperial", "metric"])
 
     if st.button('GET DISTANCES'):
-        # input_df['Driving Distance'] = input_df.apply(
-        # lambda row: get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units), axis=1)
+        api_input_check()
+
         miles_or_km = 'miles'
         if units == 'metric':
             miles_or_km = 'km'
