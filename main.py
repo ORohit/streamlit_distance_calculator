@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__ + " : ")
 orig_loc_col = 'Origin'                             # column containing origin location details (address/zip/geocodes)
 dest_loc_col = 'Destination'
 
-units = 'imperial'
+# units = 'imperial'
 # google_api_key = "**hardcoded API key"
 
 # st. set_page_config(layout="wide")
@@ -60,8 +60,8 @@ with st.sidebar:
         "# HOW TO USE\n"
         "1. Enter your [Google API key](https://developers.google.com/maps/documentation/distance-matrix/overview) below🔑\n"  # noqa: E501
         "2. Upload your file📄\n"
-        "3. Specify *Origin & Destination* columns 💬\n"
-        "4. Review results and download if needed :100:\n"
+        "3. Specify *Origin, Destination* columns & *Units* 💬\n"
+        "4. Review results and download if needed!\n"
     )
     api_key_input = st.text_input(
         "Google API Key",
@@ -77,7 +77,7 @@ with st.sidebar:
     st.markdown(
         "# ABOUT\n"
         "* Demonstrates a use case for building *Self-Serve* applications using *Streamlit*.\n"  # noqa: E501
-        "* Fetches driving distances using Google API. \n"
+        # "* Fetches driving distances using Google API. \n"
         "*  Git link: [DistanceApp](https://github.com/ORohit/stremlit_test)\n"
     )
 
@@ -99,20 +99,26 @@ if uploaded_file is not None:
     input_df_columns = input_df.columns
     # st.write("Uploaded data (top 5 rows): "), input_df.head(5)
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
-        orig_loc_col = st.selectbox("Origin Column", input_df_columns)
+        orig_loc_col = st.selectbox("Select Origin Column", input_df_columns)
     with col2:
-        dest_loc_col = st.selectbox("Destination Column", input_df_columns)
+        dest_loc_col = st.selectbox("Select Destination Column", input_df_columns)
+    with col3:
+        units = st.radio("Select Units", ["imperial", "metric"])
+
 
 
     if st.button('GET DISTANCES (click & wait)'):
         # input_df['Driving Distance'] = input_df.apply(
         # lambda row: get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units), axis=1)
+        miles_or_km = 'miles'
+        if units=='metric':
+            miles_or_km = 'km'
 
         for index, row in input_df.iterrows():
-            input_df.at[index, 'Driving Distance'] = get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units)
+            input_df.at[index, 'Driving Distance ('+miles_or_km+')'] = get_driving_distance(row[orig_loc_col], row[dest_loc_col], units=units)
         "Driving distance : ", input_df
 
         csv = convert_df(input_df)
