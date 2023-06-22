@@ -42,10 +42,10 @@ if uploaded_file is not None:
             miles_or_km = 'km'
 
         with st.spinner("Fetching distances... This may take a while⏳"):
-            input_df['driving_distance'] = input_df.apply(
-                lambda row: get_driving_distance(row[orig_loc_col], row[dest_loc_col], google_api_key, units=units), axis=1)
-            # for index, row in input_df.iterrows():
-            #     input_df.at[index, 'Driving Distance ('+miles_or_km+')'] = get_driving_distance(row[orig_loc_col], row[dest_loc_col], google_api_key, units=units)
+            # input_df['driving_distance'] = input_df.apply(
+            #     lambda row: get_driving_distance(row[orig_loc_col], row[dest_loc_col], google_api_key, units=units), axis=1)
+            for index, row in input_df.iterrows():
+                input_df.at[index, 'Driving Distance ('+miles_or_km+')'] = get_driving_distance(row[orig_loc_col], row[dest_loc_col], google_api_key, units=units)
         "Driving distance : ", input_df
 
         csv = convert_df(input_df)
