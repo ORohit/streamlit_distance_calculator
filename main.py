@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__ + " : ")
 
 # st. set_page_config(layout="wide")
 st.title("Driving Distance Calculator :car:")
-st.write("Upload your <b> CSV file with origin & destination pairs</b> to get driving distance between them. </br>Sample file <a href=""https://shorturl.at/jSXY7"">download here</a> ", unsafe_allow_html=True)
+st.write("Upload your <b> CSV file with origin & destination pairs</b> to get driving distance between them. </br> \n> Sample file <a href=""https://shorturl.at/jSXY7"">download here</a> ", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Upload file -", type='csv')
 
 sidebar()
