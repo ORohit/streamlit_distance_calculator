@@ -30,9 +30,8 @@ def sidebar():
         st.markdown(
             """
             # FAQ
-            ## How does this application work?
-            When you upload the file and hit *Calculate Distance*,
-            the code will fetch driving distances row by row by making API calls to Google.
+            ## What type of location entries are allowed?
+            Supply origins and destinations in the form of addresses, latitude/longitude coordinates, zip codes or place IDs
             ## Do I need to have API key to use this application?
             Yes, an API key is needed by the application to talk to Google servers. Get yours [here]({}).
             ## How long it takes to get the distances?
