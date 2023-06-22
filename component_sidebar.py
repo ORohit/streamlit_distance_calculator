@@ -33,7 +33,7 @@ def sidebar():
             ## What type of location entries are allowed?
             Supply origins and destinations in the form of addresses, latitude/longitude coordinates, zip codes or place IDs.
             ## Do you store any of the user data?
-            No, the app doesn't store any of it including the [API keys]({}).
+            No, the app doesn't store any of it including the [API key]({}).
             ## How long it takes to get the distances?
             It usually takes less than minute to fetch distances for about 100 records. 
             ## Is it possible to obtain the source code? 
