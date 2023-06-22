@@ -31,9 +31,9 @@ def sidebar():
             """
             # FAQ
             ## What type of location entries are allowed?
-            Supply origins and destinations in the form of addresses, latitude/longitude coordinates, zip codes or place IDs
-            ## Do I need to have API key to use this application?
-            Yes, an API key is needed by the application to talk to Google servers. Get yours [here]({}).
+            Supply origins and destinations in the form of addresses, latitude/longitude coordinates, zip codes or place IDs.
+            ## Do you store any of the user data?
+            No, the app doesn't store any of it including the [API keys] ({}).
             ## How long it takes to get the distances?
             It usually takes less than minute to fetch distances for about 100 records. 
             ## Is it possible to obtain the source code? 
