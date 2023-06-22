@@ -12,6 +12,8 @@ logger = logging.getLogger(__name__ + " : ")
 
 
 # st. set_page_config(layout="wide")
+st.set_page_config(page_title="Distance Calculator", page_icon="o")
+
 st.title("Driving Distance Calculator :car:")
 st.caption("Mobile user ? please press ```>``` butoon at the top-left corner on the page for the sidebar.")
 st.write("Upload your <b> CSV file with origin & destination pairs</b> to get driving distance between them. </br> \n> Sample file <a href=""https://shorturl.at/jSXY7"">download here</a> ", unsafe_allow_html=True)
